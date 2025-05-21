@@ -3,9 +3,10 @@
   "short_name": "UAC",
   "description": "Controle de Conta de Usuário do Windows",
   "start_url": ".",
-  "display": "standalone",
+  "display": "minimal-ui",
   "background_color": "#0078d7",
   "theme_color": "#0078d7",
+  "orientation": "landscape",
   "icons": [
     {
       "src": "https://github.com/B4DP0S31D0N/b4dp0s31d0n.github.io/blob/main/icons/icon-192.png",
@@ -17,5 +18,58 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ]
+  ],
+  "shortcuts": [
+  {
+    "name": "About",
+    "url": "/about"
+  },
+  {
+    "name": "Send Message",
+    "url": "/new-message",
+    "description": "Open a chat with another user and send a message to them."
+  }
+],
+    "display_override": [
+      "window-controls-overlay",
+      "standalone",
+      "browser"
+    ],
+"related_applications": [
+  {
+    "platform": "windows",
+    "url": "https://b4dp0s31d0n.github.io/",
+    "id": "example.ExampleApp"
+  },
+  {
+    "platform": "play",
+    "url": "https://b4dp0s31d0n.github.io/"
+  }
+],
+"share_target": {
+  "action": "/handle-shared-content/",
+  "method": "GET",
+  "params": {
+    "title": "title",
+    "url": "url"
+  }
+}
+
+"share_target": {
+    "action": "/collect-files",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url",
+      "files": [
+        {
+          "name": "lists",
+          "accept": ["text/csv", ".csv"]
+        }
+      ]
+    }
+  }
+
 }
