@@ -178,6 +178,17 @@
         </div>
     </div>
 <script>
+  window.addEventListener('beforeinstallprompt', (e) => {
+    console.log('✅ Evento beforeinstallprompt disparado');
+    // Impede o prompt automático
+    e.preventDefault();
+    window.deferredPrompt = e;
+
+    // Exibe botão de instalar, se quiser
+    // document.querySelector('#install-button').style.display = 'block';
+  });
+</script>
+<script>
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('service-worker.js')
       .then(() => console.log('Service Worker registrado com sucesso.'))
